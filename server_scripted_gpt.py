@@ -19,8 +19,8 @@ app.add_middleware(
 # load model
 model_path = './gpt_torch_script.pt'
 log.info(f"Instantiating traced model {model_path}")
-model = torch.jit.load(model_path)
-model = model.eval()
+loaded_model = torch.jit.load(model_path)
+loaded_model = loaded_model.eval()
 
 
 
