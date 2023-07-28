@@ -3,14 +3,8 @@ import requests
 import logging
 
 # Configure logging to write to a log file
-logging.basicConfig(filename='gpt_response_log.txt', level=logging.INFO)
+logging.basicConfig(filename='gpt/gpt_response_log.txt', level=logging.INFO)
 log = logging.getLogger(__name__)
-
-# def make_api_call(input_text):
-#     url = "http://localhost:8080/infer"
-#     params = {'input_txt': input_text}
-#     response = requests.get(url, params=params)
-#     return response
 
 def make_api_call(input_text):
     url = "http://localhost:8080/infer"
@@ -35,7 +29,6 @@ def test_api_calls():
 
     for i in range(num_calls):
         start_time = time.time()
-        log.info(f"Started API Call {i + 1}")
         response = make_api_call(input_text)
         end_time = time.time()
 

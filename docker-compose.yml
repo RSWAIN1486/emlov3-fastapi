@@ -3,7 +3,7 @@ services:
   demo_gpt:
     build:
       context: .
-      dockerfile: Dockerfile.gpt
+      dockerfile: gpt/Dockerfile.gpt
     image: gpt-fastapi:latest
     container_name: gpt-fastapi-demo
     expose:
@@ -15,7 +15,7 @@ services:
   demo_vit:
     build:
       context: .
-      dockerfile: Dockerfile.vit
+      dockerfile: vit/Dockerfile.vit
     image: vit-fastapi:latest
     container_name: vit-fastapi-demo
     expose:

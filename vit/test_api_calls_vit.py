@@ -3,11 +3,11 @@ import logging
 import time
 
 # Configure logging to write to a log file
-logging.basicConfig(filename='vit_response_log.txt', level=logging.INFO)
+logging.basicConfig(filename='vit/vit_response_log.txt', level=logging.INFO)
 log = logging.getLogger(__name__)
 
 BASE_URL = "http://localhost:8080"
-image_file = 'img001.png'
+image_file = 'vit/img001.png'
 
 def get_image_data(image_file):
     # Replace with the path to a sample image file for testing
@@ -40,14 +40,10 @@ def test_api_calls():
     total_response_time = 0
 
     # load classes
-    with open('cifar10_classes.txt', "r") as f:
+    with open('vit/cifar10_classes.txt', "r") as f:
             categories = [s.strip() for s in f.readlines()]
 
-    # Setup logging to write to a log file
-    logging.basicConfig(filename='api_call_log.txt', level=logging.INFO)
-
     for i in range(num_calls):
-        log.info(f"Started API Call {i + 1}")
         response, response_time = make_api_call(get_image_data(image_file))
         total_response_time += response_time
 
